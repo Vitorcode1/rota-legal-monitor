@@ -1,0 +1,6 @@
+# Normaliza line endings: LF no repositorio, nativo no checkout
+* text=auto eol=lf
+
+# Binarios explícitos
+*.lockb binary
+bun.lock text eol=lf

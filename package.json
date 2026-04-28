@@ -1,0 +1,37 @@
+{
+  "name": "rota-legal-monitor",
+  "version": "0.1.0",
+  "description": "Monitor semanal de condicoes de imigracao legal para brasileiros que querem trabalhar como entregadores na Europa",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "extract": "bun run src/cli/extract.ts",
+    "extract:nl": "bun run src/cli/extract.ts --country=nl",
+    "extract:pt": "bun run src/cli/extract.ts --country=pt",
+    "extract:de": "bun run src/cli/extract.ts --country=de",
+    "extract:es": "bun run src/cli/extract.ts --country=es",
+    "extract:ie": "bun run src/cli/extract.ts --country=ie",
+    "diff": "bun run src/cli/diff.ts",
+    "validate": "bun run src/cli/validate.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "bun test"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.32.0",
+    "@mozilla/readability": "^0.5.0",
+    "jsdom": "^25.0.0",
+    "pdf-parse": "^1.1.1",
+    "playwright": "^1.48.0",
+    "zod": "^3.23.0",
+    "zod-to-json-schema": "^3.23.0"
+  },
+  "devDependencies": {
+    "@types/jsdom": "^21.1.7",
+    "@types/node": "^22.0.0",
+    "bun-types": "^1.1.0",
+    "typescript": "^5.6.0"
+  },
+  "engines": {
+    "bun": ">=1.1.0"
+  }
+}

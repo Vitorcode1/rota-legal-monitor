@@ -1,0 +1,119 @@
+# Sources
+
+Registro central das fontes de dados oficiais por país. Este documento é a fonte de verdade humana. Os arquivos `src/sources/{cc}.ts` refletem o que está aqui.
+
+## Princípios
+
+- Apenas fontes governamentais ou oficiais reconhecidas pelo governo
+- Preferir páginas em inglês quando o site oferece (mais estável que tradução automatizada)
+- Documentar em qual idioma original o LLM vai trabalhar
+- Anotar quando a fonte é particularmente sensível a redesign
+
+## Holanda (`nl`)
+
+Idiomas: holandês e inglês. Vamos consumir as versões em inglês.
+
+| URL | Tipo de conteúdo | Frequência sugerida |
+|-----|------------------|---------------------|
+| `https://ind.nl/en/work` | Visão geral de vistos de trabalho | Semanal |
+| `https://ind.nl/en/highly-skilled-migrant` | Trabalhador altamente qualificado, valores de renda | Semanal |
+| `https://ind.nl/en/orientation-year-highly-educated-persons` | Visto de orientação pós-graduação | Mensal |
+| `https://ind.nl/en/forms/costs` | Tabela de taxas oficiais | Semanal |
+| `https://www.government.nl/topics/coming-to-work-in-the-netherlands` | Política geral | Mensal |
+
+**Notas:**
+
+- IND.nl às vezes tem conteúdo dinâmico carregado por JS. Testar com fetch nativo primeiro, ir para Playwright se necessário.
+- A página de "Highly Skilled Migrant" é a mais crítica. É onde mudanças de salário mínimo aparecem.
+- Não usar `expatica.com` ou `iamsterdam.com`. São agregadores, não oficiais.
+
+## Portugal (`pt`)
+
+Idiomas: português. O conteúdo já está em PT-PT, próximo o suficiente do PT-BR para uso direto.
+
+| URL | Tipo de conteúdo | Frequência sugerida |
+|-----|------------------|---------------------|
+| `https://aima.gov.pt/pt` | Página principal da agência de migrações | Semanal |
+| `https://aima.gov.pt/pt/area-do-cidadao/cplp` | Acordo CPLP, vantagens para brasileiros | Semanal |
+| `https://aima.gov.pt/pt/area-do-cidadao/vistos-e-autorizacoes-de-residencia` | Tipos de visto e autorização de residência | Semanal |
+| `https://www.portaldascomunidades.mne.gov.pt/pt/vistos-e-legalizacao` | Ministério dos Negócios Estrangeiros | Mensal |
+
+**Notas:**
+
+- AIMA substituiu o antigo SEF em 2023. Verificar regularmente se URLs antigas redirecionam corretamente.
+- CPLP é o diferencial mais importante para brasileiros. Sempre extrair em campo próprio do schema.
+- Conteúdo em PT-PT pode usar termos como "autorização de residência" em vez de "visto". Garantir que o LLM normalize.
+
+## Alemanha (`de`)
+
+Idiomas: alemão e inglês. Vamos consumir versões em inglês.
+
+| URL | Tipo de conteúdo | Frequência sugerida |
+|-----|------------------|---------------------|
+| `https://www.make-it-in-germany.com/en` | Portal oficial para profissionais estrangeiros | Semanal |
+| `https://www.bamf.de/EN/Themen/MigrationAufenthalt/ZuwandererDrittstaaten/Migrathek/Erwerbstaetigkeit/erwerbstaetigkeit-node.html` | BAMF, autoridade federal de migração | Semanal |
+| `https://www.auswaertiges-amt.de/en/visa-service` | Ministério das Relações Exteriores, vistos | Mensal |
+| `https://www.make-it-in-germany.com/en/visa-residence/types/employment` | Visto de emprego e variantes | Semanal |
+
+**Notas:**
+
+- A Alemanha tem uma estrutura de visto bastante segmentada. O schema precisa lidar com pelo menos: Skilled Worker Visa, Job Seeker Visa, Opportunity Card.
+- "Make it in Germany" é oficial do governo federal e a fonte mais legível.
+- Cuidado com mistura de regras estaduais (Bundesländer) que aparecem em algumas páginas. O monitor cobre só nível federal.
+
+## Espanha (`es`)
+
+Idiomas: espanhol e inglês. Inglês quando disponível, espanhol nos fallbacks.
+
+| URL | Tipo de conteúdo | Frequência sugerida |
+|-----|------------------|---------------------|
+| `https://www.inclusion.gob.es/web/migraciones/inicio` | Ministério de Inclusão, área de migrações | Semanal |
+| `https://www.exteriores.gob.es/Consulados/saopaulo/pt/ServiciosConsulares/Paginas/Visados.aspx` | Consulado em São Paulo, lista de vistos | Mensal |
+| `https://extranjeros.inclusion.gob.es/es/InformacionInteres/InformacionProcedimientos/index.html` | Procedimentos detalhados | Semanal |
+
+**Notas:**
+
+- Páginas espanholas são frequentemente PDF anexos em vez de HTML. Fetcher precisa lidar com `application/pdf`.
+- Há diferença significativa entre "visado nacional" e "autorización de residencia". O LLM deve distinguir.
+
+## Irlanda (`ie`)
+
+Idiomas: inglês.
+
+| URL | Tipo de conteúdo | Frequência sugerida |
+|-----|------------------|---------------------|
+| `https://www.irishimmigration.ie/coming-to-work-in-ireland/` | Trabalho na Irlanda, visão geral | Semanal |
+| `https://www.irishimmigration.ie/visa-required-countries/` | Lista de países que precisam de visto | Mensal |
+| `https://enterprise.gov.ie/en/what-we-do/workplace-and-skills/employment-permits/` | Tipos de permissão de trabalho | Semanal |
+
+**Notas:**
+
+- Brasil está na lista de "visa-required countries" da Irlanda, então o caminho não é tão direto quanto na Holanda. Importante deixar isso explícito no campo `forBrazilians`.
+- Critical Skills Employment Permit e General Employment Permit são as duas categorias relevantes.
+
+## Como adicionar novas fontes
+
+Antes de adicionar:
+
+1. Confirmar que é fonte oficial. Em caso de dúvida, é não.
+2. Confirmar que o conteúdo cobre algum aspecto que ainda não temos.
+3. Ler `adding-countries.md` para o processo completo se for país novo.
+4. Adicionar entrada nesta tabela primeiro, depois no código.
+
+Para registrar:
+
+- URL exata, sem parâmetros de tracking
+- Tipo de conteúdo da lista padronizada (`overview`, `requirements`, `fees`, `news`, `agreements`)
+- Frequência (semanal, mensal)
+- Observações sobre quirks (JS pesado, PDF, idioma do conteúdo)
+
+## Fontes que NÃO usamos
+
+Para evitar tentação de incluir:
+
+- Sites de blog de imigração comercial (mesmo que tenham info correta, não são fonte primária)
+- Wikipédia (referência inicial OK, fonte de extração não)
+- Reddit, fóruns, grupos de Facebook
+- IA chat assistants de terceiros
+- Sites de "expatriate communities" que não têm chancela oficial
+- Embaixadas em outros países que não Brasil (informação pode diferir)

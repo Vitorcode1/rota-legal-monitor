@@ -1,0 +1,209 @@
+{
+  "meta": {
+    "country": "nl",
+    "countryName": "Holanda",
+    "lastUpdated": "2026-04-28T06:32:11Z",
+    "schemaVersion": "1.0.0",
+    "sources": [
+      {
+        "url": "https://ind.nl/en/highly-skilled-migrant",
+        "fetchedAt": "2026-04-28T06:30:02Z",
+        "status": "ok",
+        "contentLanguage": "en"
+      },
+      {
+        "url": "https://ind.nl/en/forms/costs",
+        "fetchedAt": "2026-04-28T06:30:45Z",
+        "status": "ok",
+        "contentLanguage": "en"
+      }
+    ]
+  },
+  "forBrazilians": {
+    "schengenVisaFree": true,
+    "maxStayDaysAsTourist": 90,
+    "workPermitNeeded": true,
+    "specialAgreements": [],
+    "notes": "Brasileiros podem entrar na Holanda sem visto de turismo por ate 90 dias dentro de qualquer periodo de 180 dias. Para trabalhar legalmente e necessaria autorizacao especifica, geralmente obtida atraves de empregador ou agencia."
+  },
+  "visaTypes": [
+    {
+      "id": "highly-skilled-migrant",
+      "name": "Trabalhador Altamente Qualificado",
+      "nameOriginal": "Highly Skilled Migrant",
+      "description": "Visto para profissionais com oferta de trabalho de empregador reconhecido pela IND. Cobre setores variados, desde tecnologia ate engenharia e medicina.",
+      "eligibility": [
+        "Oferta de emprego de empresa reconhecida como sponsor pela IND",
+        "Salario igual ou superior ao limite minimo definido para a faixa etaria",
+        "Diploma ou experiencia compativel com a posicao"
+      ],
+      "requirements": {
+        "documents": [
+          {
+            "name": "Passaporte valido",
+            "description": "Passaporte com validade minima de 6 meses apos a entrada",
+            "isCritical": true
+          },
+          {
+            "name": "Contrato de trabalho",
+            "description": "Contrato assinado pelo empregador reconhecido pela IND",
+            "isCritical": true
+          }
+        ],
+        "incomeRequirement": {
+          "amount": 5688,
+          "currency": "EUR",
+          "period": "monthly",
+          "notes": "Valor para 2026, profissionais com 30 anos ou mais. Para menores de 30 anos o valor e 4171 EUR mensais."
+        },
+        "qualificationsRequired": [
+          "Diploma reconhecido ou experiencia profissional equivalente"
+        ],
+        "languageRequired": null
+      },
+      "process": {
+        "steps": [
+          {
+            "order": 1,
+            "name": "Empregador submete o pedido na IND",
+            "description": "O empregador reconhecido inicia o processo, nao o candidato.",
+            "estimatedDays": null
+          },
+          {
+            "order": 2,
+            "name": "Decisao da IND",
+            "description": "IND analisa documentos e responde tipicamente em 2 a 4 semanas.",
+            "estimatedDays": 21
+          },
+          {
+            "order": 3,
+            "name": "Retirada do MVV no consulado",
+            "description": "Se aprovado, o candidato retira o visto de longa duracao no consulado holandes em Sao Paulo ou Brasilia.",
+            "estimatedDays": 7
+          }
+        ],
+        "estimatedDuration": "4 a 8 semanas",
+        "fees": [
+          {
+            "amount": 380,
+            "currency": "EUR",
+            "period": "one-time",
+            "notes": "Taxa de aplicacao IND, pagavel pelo empregador na maioria dos casos."
+          }
+        ],
+        "applicationLocation": "destino"
+      },
+      "rights": {
+        "canWork": true,
+        "canBringFamily": true,
+        "canChangeEmployer": false,
+        "pathToResidency": {
+          "yearsRequired": 5,
+          "conditions": [
+            "Manter status legal continuo",
+            "Demonstrar integracao (curso de civis ou exame)"
+          ]
+        },
+        "pathToCitizenship": {
+          "yearsRequired": 5,
+          "conditions": [
+            "Conhecimento de holandes em nivel A2",
+            "Renuncia a nacionalidade brasileira em alguns casos"
+          ]
+        }
+      },
+      "relevanceForDelivery": "low",
+      "notes": "Pouco usado por entregadores de delivery na pratica, ja que o salario tipico do setor fica abaixo do minimo exigido. Listado por completude e para casos de profissionais que trabalham em delivery enquanto buscam recolocacao em area especializada."
+    },
+    {
+      "id": "search-year",
+      "name": "Visto de Procura de Emprego",
+      "nameOriginal": "Orientation Year Visa",
+      "description": "Visto temporario de 1 ano para recem-formados em universidades reconhecidas, permitindo procurar emprego ou empreender na Holanda.",
+      "eligibility": [
+        "Diploma de instituicao da lista de top 200 do ranking THE ou QS",
+        "Diploma obtido nos ultimos 3 anos",
+        "Recursos financeiros suficientes para o periodo"
+      ],
+      "requirements": {
+        "documents": [
+          {
+            "name": "Diploma reconhecido",
+            "description": "Diploma de bacharel ou superior de universidade qualificada",
+            "isCritical": true
+          }
+        ],
+        "incomeRequirement": null,
+        "qualificationsRequired": [
+          "Diploma de universidade na lista oficial da IND"
+        ],
+        "languageRequired": null
+      },
+      "process": {
+        "steps": [
+          {
+            "order": 1,
+            "name": "Submeter pedido na IND",
+            "description": "Pedido individual, nao precisa de sponsor.",
+            "estimatedDays": null
+          },
+          {
+            "order": 2,
+            "name": "Decisao da IND",
+            "description": "Tipicamente 60 a 90 dias.",
+            "estimatedDays": 75
+          }
+        ],
+        "estimatedDuration": "8 a 12 semanas",
+        "fees": [
+          {
+            "amount": 228,
+            "currency": "EUR",
+            "period": "one-time",
+            "notes": null
+          }
+        ],
+        "applicationLocation": "ambos"
+      },
+      "rights": {
+        "canWork": true,
+        "canBringFamily": false,
+        "canChangeEmployer": true,
+        "pathToResidency": null,
+        "pathToCitizenship": null
+      },
+      "relevanceForDelivery": "indirect",
+      "notes": "Possivel caminho para brasileiros com diploma recente. Permite trabalhar em qualquer atividade durante o ano de procura, incluindo delivery, enquanto busca emprego permanente."
+    }
+  ],
+  "generalRequirements": {
+    "passportValidity": "Minimo 6 meses apos a data de entrada planejada",
+    "proofOfFunds": null,
+    "healthInsurance": {
+      "required": true,
+      "mustBeLocal": true,
+      "minimumCoverage": null,
+      "notes": "Apos receber BSN e iniciar trabalho, e obrigatorio contratar um zorgverzekering (seguro de saude basico holandes). Custo tipico em 2026: entre 130 e 160 EUR mensais."
+    },
+    "cleanCriminalRecord": false,
+    "vaccinations": []
+  },
+  "recentChanges": [
+    {
+      "date": "2026-01-01",
+      "title": "Atualizacao dos limites salariais para Highly Skilled Migrant",
+      "summary": "IND publicou novos valores minimos para 2026. Acima de 30 anos passou de 5331 EUR para 5688 EUR mensais. Abaixo de 30 anos passou de 3909 EUR para 4171 EUR.",
+      "severity": "major",
+      "affects": ["highly-skilled-migrant"],
+      "sourceUrl": "https://ind.nl/en/news/normbedragen-2026"
+    }
+  ],
+  "reliability": {
+    "extractedBy": "manual",
+    "extractionConfidence": "high",
+    "humanReviewedAt": "2026-04-28T08:00:00Z",
+    "knownIssues": [
+      "Este e um arquivo de exemplo construido manualmente como fixture para testes. Valores devem ser conferidos contra a fonte oficial antes de uso em producao."
+    ]
+  }
+}
