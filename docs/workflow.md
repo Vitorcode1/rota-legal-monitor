@@ -1,15 +1,16 @@
 # Workflow
 
-O que acontece, em ordem cronológica, quando o cron semanal dispara. Documento de referência para entender o ciclo completo.
+O que acontece, em ordem cronológica, quando o cron quinzenal dispara. Documento de referência para entender o ciclo completo.
 
 ## Trigger
 
-Todo domingo às 06:00 UTC, o GitHub Actions agenda a execução do workflow `weekly-update.yml`. Também pode ser disparado manualmente pelo botão Run workflow no painel do Actions ou via push do `workflow_dispatch`.
+Nos dias 1 e 15 de cada mês às 06:00 UTC, o GitHub Actions agenda a execução do workflow `biweekly-update.yml`. Também pode ser disparado manualmente pelo botão Run workflow no painel do Actions ou via push do `workflow_dispatch`.
 
-A escolha de domingo de manhã é deliberada:
+A escolha dos dias 1 e 15 é deliberada:
 
-- Sites de governo geralmente não publicam mudanças no fim de semana, então pegamos o "estado estável" da semana anterior
-- Se o run falhar, há tempo durante a semana para investigar antes do próximo
+- Datas previsíveis facilitam comunicar ao usuário quando esperar a próxima atualização
+- Sites de governo costumam publicar mudanças no início do mês, então o dia 1 pega rápido
+- A janela máxima entre execuções fica em 17 dias (de 15 de janeiro a 1 de fevereiro), mantendo o indicador dentro do limite verde
 - 06:00 UTC é horário comercial cedo na Europa (08:00 NL, 03:00 BR), bom para abrir issue antes do início do dia útil
 
 ## Steps do workflow
@@ -71,12 +72,12 @@ Mudanças médias e baixas não geram issue. Vão pro log do Actions e pro corpo
 
 ### 9. Commit
 
-Mensagem padrão: `chore(data): weekly snapshot YYYY-MM-DD`
+Mensagem padrão: `chore(data): biweekly snapshot YYYY-MM-DD`
 
 Se houve mudança de qualquer relevância, mensagem detalhada:
 
 ```
-chore(data): weekly snapshot 2026-04-28
+chore(data): biweekly snapshot 2026-04-28
 
 Changes detected:
 - nl: highly-skilled-migrant income threshold updated (5688 -> 5731)
@@ -87,7 +88,7 @@ See data/history for previous snapshots.
 
 ### 10. Push
 
-`git push origin main`. Se falhar (alguém pushou commit no meio), o workflow falha e roda de novo na semana seguinte. Tudo bem perder uma semana ocasional.
+`git push origin main`. Se falhar (alguém pushou commit no meio), o workflow falha e roda de novo na quinzena seguinte. Tudo bem perder uma quinzena ocasional.
 
 ### 11. Limpeza
 
@@ -133,7 +134,7 @@ Não deveria acontecer (workflow não modifica schema), mas se acontecer:
 - O step de validação no início pega
 - Pipeline para antes de tocar em dados
 
-## Trigger manual durante a semana
+## Trigger manual fora do ciclo
 
 Casos válidos para disparar manual:
 
@@ -144,8 +145,8 @@ Casos válidos para disparar manual:
 Para disparar:
 
 ```bash
-gh workflow run weekly-update.yml
-# ou pelo painel web: Actions > Weekly Update > Run workflow
+gh workflow run biweekly-update.yml
+# ou pelo painel web: Actions > Biweekly Update > Run workflow
 ```
 
 ## Observabilidade

@@ -4,7 +4,7 @@ Especificação técnica do **Rota Legal Monitor**. Este é o documento de fonte
 
 ## 1. Objetivo
 
-Manter um conjunto de arquivos JSON estruturados, atualizados semanalmente, com as condições oficiais de imigração legal de 5 países europeus (Holanda, Portugal, Alemanha, Espanha, Irlanda) na perspectiva de um cidadão brasileiro que pretende trabalhar como entregador de delivery.
+Manter um conjunto de arquivos JSON estruturados, atualizados quinzenalmente, com as condições oficiais de imigração legal de 5 países europeus (Holanda, Portugal, Alemanha, Espanha, Irlanda) na perspectiva de um cidadão brasileiro que pretende trabalhar como entregador de delivery.
 
 Os dados servem dois consumidores:
 
@@ -32,7 +32,7 @@ Para evitar escopo solto, isto **não** é parte do projeto:
 
 **Como desenvolvedor da ferramenta web Rota Legal**, eu quero consumir um JSON estável com schema previsível para popular a interface sem precisar fazer scraping no frontend.
 
-**Como leitor que comprou o e-book há 8 meses**, eu quero abrir a ferramenta web e ver "atualizado em 22 de abril de 2026" para confiar no que estou lendo.
+**Como leitor que comprou o e-book há 8 meses**, eu quero abrir a ferramenta web e ver "atualizado há 6 dias" para confiar no que estou lendo.
 
 ## 4. Schema de dados
 
@@ -108,7 +108,7 @@ Detalhe em [`docs/extraction-strategy.md`](docs/extraction-strategy.md). Resumo:
 
 ## 8. Cadência de atualização
 
-- **Execução automática:** todo domingo às 06:00 UTC via GitHub Actions.
+- **Execução automática:** nos dias 1 e 15 de cada mês às 06:00 UTC via GitHub Actions.
 - **Trigger manual:** disponível via `workflow_dispatch` no GitHub.
 - **Trigger por mudança de schema:** se `schema.ts` mudar, a próxima execução é forçada a re-extrair tudo do zero (sem cache).
 
@@ -160,8 +160,8 @@ Lista de decisões já tomadas para evitar relitígio:
 
 A v1.0 está bem-sucedida quando:
 
-- 5 países atualizam sozinhos por 4 semanas seguidas sem manutenção
-- Custo mensal abaixo de USD 15 (Anthropic API)
+- 5 países atualizam sozinhos por pelo menos 8 execuções seguidas (4 meses) sem manutenção
+- Custo anual abaixo de USD 25 (Anthropic API, ver `docs/cost-and-billing.md`)
 - Frontend Rota Legal consome os dados em produção
 - Pelo menos 1 mudança real foi detectada e o sistema notificou corretamente
 - Zero incidentes de chave de API exposta ou dados pessoais coletados

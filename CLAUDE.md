@@ -10,7 +10,7 @@ Instruções para o Claude Code trabalhando neste repositório. Mantenha curto. 
 - **Validação:** Zod
 - **HTTP:** `fetch` nativo do Bun, com Playwright apenas como fallback para sites JS-pesados
 - **Parser HTML:** `@mozilla/readability` para extrair conteúdo principal antes de mandar pro LLM
-- **CI:** GitHub Actions (cron semanal)
+- **CI:** GitHub Actions (cron quinzenal, dias 1 e 15 de cada mês)
 - **Storage:** arquivos JSON versionados no Git, sem banco de dados
 
 ## Antes de começar uma tarefa
@@ -70,7 +70,7 @@ São regras do projeto HenryZuka que valem aqui também:
 | Que dados extraímos exatamente? | `docs/data-schema.md` |
 | Como o LLM extrai dados estruturados? | `docs/extraction-strategy.md` |
 | De que sites tiramos os dados? | `docs/sources.md` |
-| Como o cron semanal funciona? | `docs/workflow.md` |
+| Como o cron quinzenal funciona? | `docs/workflow.md` |
 | Como adicionar um país novo? | `docs/adding-countries.md` |
 | Em que ordem implementar tudo? | `PLAN.md` |
 | Por que o projeto existe? | `spec.md` |

@@ -1,6 +1,6 @@
 # Rota Legal Monitor
 
-> Monitor semanal automatizado das condições de imigração legal em países europeus para brasileiros que pretendem trabalhar como entregadores de delivery.
+> Monitor quinzenal automatizado das condições de imigração legal em países europeus para brasileiros que pretendem trabalhar como entregadores de delivery.
 
 Parte do ecossistema **HenryZuka**. Este repositório alimenta de dados frescos a ferramenta web *Rota Legal* e fornece a fonte de verdade que o e-book *Rota Holanda* referencia.
 
@@ -8,7 +8,7 @@ Parte do ecossistema **HenryZuka**. Este repositório alimenta de dados frescos 
 
 ## O que este projeto faz
 
-Toda semana, automaticamente:
+Duas vezes por mês (dias 1 e 15), automaticamente:
 
 1. Visita as páginas oficiais de imigração de 5 países europeus (Holanda, Portugal, Alemanha, Espanha, Irlanda)
 2. Extrai dados estruturados sobre vistos, requisitos, taxas, prazos e mudanças recentes usando a API da Anthropic
@@ -33,7 +33,7 @@ Com este monitor:
 ## Arquitetura em 30 segundos
 
 ```
-GitHub Actions (cron semanal)
+GitHub Actions (cron quinzenal)
         ↓
   fetcher (httpx + Playwright fallback)
         ↓
@@ -96,7 +96,7 @@ rota-legal-monitor/
 │   ├── sources.md               registro das fontes oficiais
 │   ├── data-schema.md           contratos TypeScript
 │   ├── extraction-strategy.md   como funciona a extracao via LLM
-│   ├── workflow.md              fluxo semanal passo a passo
+│   ├── workflow.md              fluxo quinzenal passo a passo
 │   └── adding-countries.md      como adicionar novo pais
 │
 ├── src/
@@ -109,11 +109,11 @@ rota-legal-monitor/
 │
 ├── data/
 │   ├── current/                 ultimo snapshot por pais
-│   └── history/                 snapshots semanais arquivados
+│   └── history/                 snapshots quinzenais arquivados
 │
 └── .github/
     └── workflows/
-        └── weekly-update.yml    cron semanal
+        └── biweekly-update.yml  cron quinzenal
 ```
 
 ## Status dos países
@@ -136,12 +136,12 @@ Se você é humano, leia [`spec.md`](spec.md) para a visão completa.
 
 ## Custo estimado de operação
 
-- GitHub Actions: gratuito (free tier cobre folgadamente um cron semanal)
+- GitHub Actions: gratuito (free tier cobre folgadamente um cron quinzenal)
 - Hospedagem dos JSON: gratuita (raw.githubusercontent.com ou GitHub Pages)
-- API da Anthropic: estimativa de USD 1 a 3 por semana com 5 países e Claude Sonnet
+- API da Anthropic: estimativa de USD 7 a 21 por ano com 5 países (detalhe em `docs/cost-and-billing.md`)
 - Domínio: opcional, custa o que você quiser pagar
 
-Ou seja: o sistema todo roda por uns USD 100 a 150 por ano.
+Ou seja: o sistema todo roda por uns USD 10 a 25 por ano.
 
 ## Licença
 

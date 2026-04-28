@@ -115,11 +115,11 @@ Estimativa total: 4 a 6 dias de trabalho focado.
 
 ## Fase 5. GitHub Actions
 
-**Objetivo:** automatizar a execução semanal.
+**Objetivo:** automatizar a execução quinzenal.
 
 **Entregáveis:**
 
-- `.github/workflows/weekly-update.yml` rodando todo domingo às 06:00 UTC
+- `.github/workflows/biweekly-update.yml` rodando nos dias 1 e 15 de cada mês às 06:00 UTC
 - Steps: checkout, setup Bun, install, run extract, run diff, archive, commit & push
 - Variável `ANTHROPIC_API_KEY` configurada como secret no repositório
 - Se o diff detectar mudança de relevância alta, abrir issue automaticamente com `gh issue create`
@@ -128,7 +128,7 @@ Estimativa total: 4 a 6 dias de trabalho focado.
 **Critério de aceite:**
 
 - Trigger manual pelo botão Run workflow funciona end-to-end
-- Commit automático aparece com mensagem `chore(data): weekly snapshot YYYY-MM-DD`
+- Commit automático aparece com mensagem `chore(data): biweekly snapshot YYYY-MM-DD`
 - Issue é aberta quando uma mudança alta é injetada artificialmente
 - Falha em qualquer step para o pipeline e notifica via email do GitHub
 
@@ -197,7 +197,7 @@ Não passe da fase X para X+1 sem confirmar:
 
 O projeto está pronto para v1.0 quando:
 
-- 5 países estão sendo atualizados semanalmente sem intervenção manual há pelo menos 4 semanas seguidas
+- 5 países estão sendo atualizados quinzenalmente sem intervenção manual por pelo menos 8 execuções seguidas (4 meses)
 - O frontend consome os dados em produção
 - Existem testes unitários para schema, fetcher, extractor e diff
 - A documentação cobre as 6 áreas listadas no README

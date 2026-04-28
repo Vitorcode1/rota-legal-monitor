@@ -20,6 +20,7 @@ export interface ExtractionContext {
   contentType: string;
   sourceUrl: string;
   contentLanguage: string;
+  promptHint?: string;
 }
 
 export class ExtractionError extends Error {
@@ -39,13 +40,18 @@ function sleep(ms: number): Promise<void> {
 }
 
 function buildUserMessage(html: string, ctx: ExtractionContext): string {
-  return [
+  const lines = [
     `Pais: ${ctx.countryName} (codigo ${ctx.country})`,
     `Tipo de conteudo desta pagina: ${ctx.contentType}`,
     `Idioma do conteudo: ${ctx.contentLanguage}`,
     `URL: ${ctx.sourceUrl}`,
     "",
     "Extraia os dados de imigracao relevantes para alguem que pretende trabalhar no pais.",
+  ];
+  if (ctx.promptHint) {
+    lines.push("", ctx.promptHint);
+  }
+  lines.push(
     "Se um campo nao estiver disponivel, use null ou array vazio. Nao invente valores.",
     "",
     "Conteudo da pagina:",
@@ -53,7 +59,8 @@ function buildUserMessage(html: string, ctx: ExtractionContext): string {
     html,
     "",
     "Use a tool submit_extraction para retornar os dados estruturados.",
-  ].join("\n");
+  );
+  return lines.join("\n");
 }
 
 export async function extractFromHtml<T>(
@@ -87,7 +94,7 @@ export async function extractFromHtml<T>(
 
       const message = await client.messages.create({
         model: MODEL,
-        max_tokens: 4096,
+        max_tokens: 8192,
         system: SYSTEM_PROMPT,
         tools: [tool],
         tool_choice: { type: "tool", name: "submit_extraction" },

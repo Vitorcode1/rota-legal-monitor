@@ -8,7 +8,7 @@ Antes de começar, confirme que vale a pena adicionar:
 
 - O país é relevante para o público-alvo (brasileiros que querem trabalhar como entregadores na Europa)
 - Existem fontes oficiais em formato consultável (HTML ou PDF, não vídeos ou áudios)
-- O país não está em situação política instável que mude regras a cada mês (essa volatilidade quebra o pressuposto de update semanal)
+- O país não está em situação política instável que mude regras a cada mês (essa volatilidade quebra o pressuposto de update quinzenal)
 
 ## Passos
 
@@ -43,7 +43,7 @@ export const beSource: SourceConfig = {
       url: 'https://...',
       contentType: 'visa-overview',
       promptHint: 'foco em trabalhadores assalariados',
-      fetchFrequency: 'weekly',
+      fetchFrequency: 'biweekly',
     },
     // mais urls aqui
   ],
@@ -100,7 +100,7 @@ Anotar no campo `reliability.knownIssues` qualquer coisa que ficou meia-boca.
 
 ### 7. Adicionar ao workflow do GitHub Actions
 
-Em `.github/workflows/weekly-update.yml`, garantir que o novo país é coberto. Se o workflow itera sobre `Object.keys(sources)`, nenhuma mudança necessária. Se está hardcoded, adicionar.
+Em `.github/workflows/biweekly-update.yml`, garantir que o novo país é coberto. Se o workflow itera sobre `Object.keys(sources)`, nenhuma mudança necessária. Se está hardcoded, adicionar.
 
 ### 8. Atualizar README
 
@@ -144,7 +144,7 @@ Para evitar discussão futura:
 
 Adicionar país é o começo. Manter funcionando exige:
 
-- Revisar logs de erro do workflow toda semana nas primeiras 4 semanas
+- Revisar logs de erro do workflow nas primeiras 8 execuções
 - Atualizar prompts se o LLM começa a errar campos novos
 - Atualizar URLs se o site oficial reorganizar
 - Aposentar fontes que ficaram obsoletas

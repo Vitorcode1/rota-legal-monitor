@@ -214,6 +214,32 @@ Algumas regras vão além do tipo TypeScript e são checadas no Zod:
 - `visaTypes[].id` único dentro do mesmo país
 - `process.steps` ordenado por `order` ascendente sem gaps
 
+## Como o frontend consome os dados
+
+O campo `meta.lastUpdated` contém a data da última extração em ISO 8601. O frontend exibe dois indicadores juntos: a data absoluta formatada e a contagem de dias decorridos calculada no cliente.
+
+Exemplo: "atualizado em 28 de abril de 2026, há 3 dias"
+
+Função utilitária para calcular dias inteiros:
+
+```typescript
+function diasDesdeAtualizacao(lastUpdated: string): number {
+  return Math.floor((Date.now() - new Date(lastUpdated).getTime()) / 86400000);
+}
+```
+
+### Faixas de exibição
+
+| Dias decorridos | Texto exibido | Estado |
+|-----------------|---------------|--------|
+| 0 | "atualizado hoje" | normal |
+| 1 | "atualizado ontem" | normal |
+| 2 a 17 | "atualizado há N dias" | normal |
+| 18 a 24 | "atualizado há N dias" | amarelo (aviso) |
+| 25 ou mais | "atualizado há N dias" | vermelho |
+
+Esses limites refletem a cadência quinzenal: a janela máxima entre execuções é de 17 dias (de 15 de janeiro a 1 de fevereiro). A partir de 18 dias algo pode ter falhado. A partir de 25 dias o dado está comprovadamente atrasado.
+
 ## Exemplo mínimo válido
 
 Arquivo `data/current/example.json` (encurtado para ilustrar):

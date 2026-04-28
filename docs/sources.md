@@ -15,16 +15,17 @@ Idiomas: holandês e inglês. Vamos consumir as versões em inglês.
 
 | URL | Tipo de conteúdo | Frequência sugerida |
 |-----|------------------|---------------------|
-| `https://ind.nl/en/work` | Visão geral de vistos de trabalho | Semanal |
-| `https://ind.nl/en/highly-skilled-migrant` | Trabalhador altamente qualificado, valores de renda | Semanal |
-| `https://ind.nl/en/orientation-year-highly-educated-persons` | Visto de orientação pós-graduação | Mensal |
-| `https://ind.nl/en/forms/costs` | Tabela de taxas oficiais | Semanal |
-| `https://www.government.nl/topics/coming-to-work-in-the-netherlands` | Política geral | Mensal |
+| `https://ind.nl/en/residence-permits/work` | Hub com todos os tipos de visto de trabalho | Quinzenal |
+| `https://ind.nl/en/residence-permits/work/highly-skilled-migrant` | Trabalhador altamente qualificado, valores de renda | Quinzenal |
+| `https://ind.nl/en/residence-permits/work/residence-permit-for-orientation-year` | Visto de orientação pós-graduação | Mensal |
+| `https://ind.nl/en/fees-costs-of-an-application` | Tabela de taxas oficiais | Quinzenal |
+| `https://ind.nl/en/work` | Visão geral e requisitos gerais | Mensal |
 
 **Notas:**
 
-- IND.nl às vezes tem conteúdo dinâmico carregado por JS. Testar com fetch nativo primeiro, ir para Playwright se necessário.
+- URLs atualizadas em abril de 2026: o IND reorganizou subpáginas de `/en/{tipo}` para `/en/residence-permits/work/{tipo}`. Verificar redirecionamentos em futuras execuções.
 - A página de "Highly Skilled Migrant" é a mais crítica. É onde mudanças de salário mínimo aparecem.
+- A tabela de taxas ficou em URL própria (`/en/fees-costs-of-an-application`), separada das páginas de formulários.
 - Não usar `expatica.com` ou `iamsterdam.com`. São agregadores, não oficiais.
 
 ## Portugal (`pt`)
@@ -33,9 +34,9 @@ Idiomas: português. O conteúdo já está em PT-PT, próximo o suficiente do PT
 
 | URL | Tipo de conteúdo | Frequência sugerida |
 |-----|------------------|---------------------|
-| `https://aima.gov.pt/pt` | Página principal da agência de migrações | Semanal |
-| `https://aima.gov.pt/pt/area-do-cidadao/cplp` | Acordo CPLP, vantagens para brasileiros | Semanal |
-| `https://aima.gov.pt/pt/area-do-cidadao/vistos-e-autorizacoes-de-residencia` | Tipos de visto e autorização de residência | Semanal |
+| `https://aima.gov.pt/pt` | Página principal da agência de migrações | Quinzenal |
+| `https://aima.gov.pt/pt/area-do-cidadao/cplp` | Acordo CPLP, vantagens para brasileiros | Quinzenal |
+| `https://aima.gov.pt/pt/area-do-cidadao/vistos-e-autorizacoes-de-residencia` | Tipos de visto e autorização de residência | Quinzenal |
 | `https://www.portaldascomunidades.mne.gov.pt/pt/vistos-e-legalizacao` | Ministério dos Negócios Estrangeiros | Mensal |
 
 **Notas:**
@@ -50,10 +51,10 @@ Idiomas: alemão e inglês. Vamos consumir versões em inglês.
 
 | URL | Tipo de conteúdo | Frequência sugerida |
 |-----|------------------|---------------------|
-| `https://www.make-it-in-germany.com/en` | Portal oficial para profissionais estrangeiros | Semanal |
-| `https://www.bamf.de/EN/Themen/MigrationAufenthalt/ZuwandererDrittstaaten/Migrathek/Erwerbstaetigkeit/erwerbstaetigkeit-node.html` | BAMF, autoridade federal de migração | Semanal |
+| `https://www.make-it-in-germany.com/en` | Portal oficial para profissionais estrangeiros | Quinzenal |
+| `https://www.bamf.de/EN/Themen/MigrationAufenthalt/ZuwandererDrittstaaten/Migrathek/Erwerbstaetigkeit/erwerbstaetigkeit-node.html` | BAMF, autoridade federal de migração | Quinzenal |
 | `https://www.auswaertiges-amt.de/en/visa-service` | Ministério das Relações Exteriores, vistos | Mensal |
-| `https://www.make-it-in-germany.com/en/visa-residence/types/employment` | Visto de emprego e variantes | Semanal |
+| `https://www.make-it-in-germany.com/en/visa-residence/types/employment` | Visto de emprego e variantes | Quinzenal |
 
 **Notas:**
 
@@ -67,9 +68,9 @@ Idiomas: espanhol e inglês. Inglês quando disponível, espanhol nos fallbacks.
 
 | URL | Tipo de conteúdo | Frequência sugerida |
 |-----|------------------|---------------------|
-| `https://www.inclusion.gob.es/web/migraciones/inicio` | Ministério de Inclusão, área de migrações | Semanal |
+| `https://www.inclusion.gob.es/web/migraciones/inicio` | Ministério de Inclusão, área de migrações | Quinzenal |
 | `https://www.exteriores.gob.es/Consulados/saopaulo/pt/ServiciosConsulares/Paginas/Visados.aspx` | Consulado em São Paulo, lista de vistos | Mensal |
-| `https://extranjeros.inclusion.gob.es/es/InformacionInteres/InformacionProcedimientos/index.html` | Procedimentos detalhados | Semanal |
+| `https://extranjeros.inclusion.gob.es/es/InformacionInteres/InformacionProcedimientos/index.html` | Procedimentos detalhados | Quinzenal |
 
 **Notas:**
 
@@ -82,9 +83,9 @@ Idiomas: inglês.
 
 | URL | Tipo de conteúdo | Frequência sugerida |
 |-----|------------------|---------------------|
-| `https://www.irishimmigration.ie/coming-to-work-in-ireland/` | Trabalho na Irlanda, visão geral | Semanal |
+| `https://www.irishimmigration.ie/coming-to-work-in-ireland/` | Trabalho na Irlanda, visão geral | Quinzenal |
 | `https://www.irishimmigration.ie/visa-required-countries/` | Lista de países que precisam de visto | Mensal |
-| `https://enterprise.gov.ie/en/what-we-do/workplace-and-skills/employment-permits/` | Tipos de permissão de trabalho | Semanal |
+| `https://enterprise.gov.ie/en/what-we-do/workplace-and-skills/employment-permits/` | Tipos de permissão de trabalho | Quinzenal |
 
 **Notas:**
 
@@ -104,7 +105,7 @@ Para registrar:
 
 - URL exata, sem parâmetros de tracking
 - Tipo de conteúdo da lista padronizada (`overview`, `requirements`, `fees`, `news`, `agreements`)
-- Frequência (semanal, mensal)
+- Frequência (quinzenal, mensal)
 - Observações sobre quirks (JS pesado, PDF, idioma do conteúdo)
 
 ## Fontes que NÃO usamos
