@@ -1,0 +1,622 @@
+{
+  "forBrazilians": {
+    "maxStayDaysAsTourist": 90,
+    "notes": "Brasileiros podem entrar em Portugal sem visto como turistas (Schengen) por até 90 dias, mas necessitam de visto de residência específico para trabalho remoto.",
+    "schengenVisaFree": true,
+    "specialAgreements": [],
+    "workPermitNeeded": true
+  },
+  "generalRequirements": {
+    "cleanCriminalRecord": true,
+    "healthInsurance": {
+      "minimumCoverage": null,
+      "mustBeLocal": false,
+      "notes": "Não mencionado nos requisitos desta autorização específica",
+      "required": false
+    },
+    "passportValidity": "Passaporte válido",
+    "proofOfFunds": null,
+    "vaccinations": []
+  },
+  "meta": {
+    "country": "pt",
+    "countryName": "Portugal",
+    "lastUpdated": "2026-04-29T10:58:30.472Z",
+    "schemaVersion": "1.0.0",
+    "sources": [
+      {
+        "contentLanguage": "en",
+        "fetchedAt": "2026-04-29T10:53:53.415Z",
+        "status": "ok",
+        "url": "https://aima.gov.pt/pt/trabalhar"
+      },
+      {
+        "contentLanguage": "en",
+        "fetchedAt": "2026-04-29T10:55:30.173Z",
+        "status": "ok",
+        "url": "https://aima.gov.pt/pt/trabalhar/autorizacao-de-residencia-para-exercicio-de-atividade-profissional-subordinada-com-visto-de-residencia-art-88-o-n-o-1"
+      },
+      {
+        "contentLanguage": "en",
+        "fetchedAt": "2026-04-29T10:56:05.904Z",
+        "status": "ok",
+        "url": "https://aima.gov.pt/pt/trabalhar/autorizacao-de-residencia-para-exercicio-de-atividade-profissional-subordinada-com-dispensa-de-visto-de-residencia-art-88-o-n-o-"
+      },
+      {
+        "contentLanguage": "en",
+        "fetchedAt": "2026-04-29T10:57:23.137Z",
+        "status": "ok",
+        "url": "https://aima.gov.pt/pt/trabalhar/autorizacao-de-residencia-para-atividade-altamente-qualificada-art-90-o"
+      },
+      {
+        "contentLanguage": "en",
+        "fetchedAt": "2026-04-29T10:58:05.841Z",
+        "status": "ok",
+        "url": "https://aima.gov.pt/pt/trabalhar/autorizacao-de-residencia-para-o-exercicio-de-atividade-profissional-prestada-de-forma-remota-com-visto-de-residencia-para-o-exe"
+      }
+    ]
+  },
+  "recentChanges": [
+    {
+      "affects": [
+        "Autorização de Residência para Atividade Profissional Subordinada com Dispensa de Visto",
+        "Manifestações de interesse nos termos do artigo 88.º, n.º 2"
+      ],
+      "date": "2024-06-04",
+      "severity": "major",
+      "sourceUrl": "https://aima.gov.pt/pt/trabalhar/autorizacao-de-residencia-para-exercicio-de-atividade-profissional-subordinada-com-dispensa-de-visto-de-residencia-art-88-o-n-o-",
+      "summary": "O artigo 88.º, n.º 2 do REPSAE (Regime Especial de Entrada, Permanência, Saída e Afastamento de Estrangeiros) foi revogado pelo Decreto-Lei n.º 37-A/2024, de 3 de junho, com efeitos a partir de 4 de junho de 2024. Esta alteração impacta diretamente o processo de autorização de residência para atividade profissional subordinada com dispensa de visto.",
+      "title": "Revogação do Artigo 88.º, n.º 2 do REPSAE"
+    }
+  ],
+  "reliability": {
+    "extractedBy": "llm",
+    "extractionConfidence": "medium",
+    "humanReviewedAt": null,
+    "knownIssues": []
+  },
+  "visaTypes": [
+    {
+      "description": "Autorização de residência destinada a cidadãos estrangeiros que pretendem exercer atividade profissional subordinada (emprego) em Portugal, mediante visto de residência prévio.",
+      "eligibility": [
+        "Possuir visto de residência válido para exercício de atividade profissional subordinada",
+        "Ter contrato de trabalho ou vínculo laboral com entidade patronal portuguesa",
+        "Não ter condenação por crime punível com pena superior a um ano",
+        "Não estar em período de interdição de entrada em território nacional",
+        "Não constar no Sistema de Informação Schengen (SIS) para recusa de entrada"
+      ],
+      "id": "autorizacao-residencia-trabalho-subordinado",
+      "name": "Autorização de Residência para Exercício de Atividade Profissional Subordinada",
+      "nameOriginal": "Autorização de Residência para Exercício de Atividade Profissional Subordinada com Visto de Residência",
+      "notes": "O titular pode exercer atividade profissional independente se solicitar a substituição do título de residência. A autorização é válida por 2 anos e renovável por períodos sucessivos de 3 anos. Fundamentação legal: Artigo 88.º, n.º 1 do REPSAE, conjugado com Artigos 51.º, 53.º e 54.º n.º 1 do Dec. Reg. n.º 84/2007.",
+      "process": {
+        "applicationLocation": "ambos",
+        "estimatedDuration": "Não especificado na página",
+        "fees": [],
+        "steps": [
+          {
+            "description": "Solicitar visto de residência para trabalho subordinado no Consulado Português no país de origem, apresentando contrato de trabalho ou promessa de contrato",
+            "estimatedDays": null,
+            "name": "Obtenção do visto de residência no país de origem",
+            "order": 1
+          },
+          {
+            "description": "Entrar em território português com o visto de residência válido",
+            "estimatedDays": null,
+            "name": "Entrada em Portugal",
+            "order": 2
+          },
+          {
+            "description": "Realizar agendamento para submissão do pedido de autorização de residência em qualquer Loja AIMA (ou através de plataforma eletrónica quando implementada)",
+            "estimatedDays": null,
+            "name": "Agendamento na AIMA",
+            "order": 3
+          },
+          {
+            "description": "Providenciar todos os documentos exigidos: passaporte, visto válido, declaração da entidade patronal, comprovativo de morada, NIF, NISS e formulários",
+            "estimatedDays": null,
+            "name": "Reunir documentação necessária",
+            "order": 4
+          },
+          {
+            "description": "Comparecer à Loja AIMA na data agendada e entregar o pedido com todos os documentos",
+            "estimatedDays": null,
+            "name": "Submissão presencial do pedido",
+            "order": 5
+          },
+          {
+            "description": "AIMA analisa o pedido, verifica requisitos legais e ausência de impedimentos (antecedentes criminais, alertas SIS, etc.)",
+            "estimatedDays": null,
+            "name": "Análise e decisão",
+            "order": 6
+          },
+          {
+            "description": "Caso aprovado, é emitido o título de residência temporária válido por 2 anos",
+            "estimatedDays": null,
+            "name": "Emissão do título de residência",
+            "order": 7
+          }
+        ]
+      },
+      "relevanceForDelivery": "direct",
+      "requirements": {
+        "documents": [
+          {
+            "description": "Fotografias iguais, a cores, fundo liso, atualizadas e com boas condições de identificação (para agendamentos em Odivelas ou Aveiro)",
+            "isCritical": false,
+            "name": "Duas fotografias tipo passe"
+          },
+          {
+            "description": "Passaporte em vigor durante o período de residência",
+            "isCritical": true,
+            "name": "Passaporte válido"
+          },
+          {
+            "description": "Visto de residência para exercício de atividade profissional subordinada, emitido previamente e ainda válido",
+            "isCritical": true,
+            "name": "Visto de residência válido"
+          },
+          {
+            "description": "Documento emitido pelo empregador atestando o vínculo laboral existente",
+            "isCritical": true,
+            "name": "Declaração sob compromisso de honra da Entidade Patronal"
+          },
+          {
+            "description": "Declaração sob compromisso de honra indicando a morada e em que termos habita (proprietário, arrendatário, subarrendatário, usufrutuário, comodatário, etc.)",
+            "isCritical": true,
+            "name": "Declaração de morada de residência"
+          },
+          {
+            "description": "Certidão de registo predial ou código de acesso (proprietário/usufrutuário) OU declaração do senhorio/entidade alojadora (arrendatário/locatário)",
+            "isCritical": true,
+            "name": "Comprovativo de direito sobre o imóvel"
+          },
+          {
+            "description": "Documento comprovando inscrição no sistema fiscal português",
+            "isCritical": true,
+            "name": "Comprovativo de inscrição na administração fiscal (NIF)"
+          },
+          {
+            "description": "Documento comprovando inscrição no sistema de segurança social português",
+            "isCritical": true,
+            "name": "Comprovativo de inscrição na segurança social (NISS)"
+          },
+          {
+            "description": "Impresso próprio assinado pelo requerente ou representante legal (preenchimento obrigatório)",
+            "isCritical": true,
+            "name": "Modelo 1 preenchido"
+          },
+          {
+            "description": "Preenchimento se aplicável",
+            "isCritical": false,
+            "name": "Modelo 4 - Termo de Responsabilidade"
+          }
+        ],
+        "incomeRequirement": null,
+        "languageRequired": null,
+        "qualificationsRequired": []
+      },
+      "rights": {
+        "canBringFamily": false,
+        "canChangeEmployer": true,
+        "canWork": true,
+        "pathToCitizenship": {
+          "conditions": [
+            "Residência legal em Portugal por 5 anos",
+            "Conhecimento suficiente da língua portuguesa",
+            "Não ter condenações criminais",
+            "Não representar perigo ou ameaça à segurança nacional"
+          ],
+          "yearsRequired": 5
+        },
+        "pathToResidency": {
+          "conditions": [
+            "Renovação da autorização de residência após 2 anos",
+            "Renovações sucessivas por períodos de 3 anos",
+            "Manutenção dos requisitos legais"
+          ],
+          "yearsRequired": 2
+        }
+      }
+    },
+    {
+      "description": "Autorização de residência para exercício de trabalho subordinado (emprego assalariado) em Portugal, sem necessidade de obter visto prévio. Especialmente relevante para brasileiros cobertos pelo Estatuto de Igualdade e Tratado de Amizade Luso-Brasileiro. Permite regularização com base em contrato de trabalho ou 12 meses de contribuições à segurança social.",
+      "eligibility": [
+        "Cidadãos estrangeiros com entrada legal em Portugal (visto válido ou 12 meses de contribuições à segurança social)",
+        "Ter promessa de contrato de trabalho ou vínculo laboral em Portugal",
+        "Estar registrado na administração fiscal e segurança social portuguesas",
+        "Não ter condenação por crime punível com pena superior a um ano",
+        "Não estar em período de interdição de entrada em território nacional"
+      ],
+      "id": "autorizacao-residencia-trabalho-subordinado-dispensa-visto",
+      "name": "Autorização de Residência para Atividade Profissional Subordinada com Dispensa de Visto",
+      "nameOriginal": "Autorização de Residência para Exercício de Atividade Profissional Subordinada com Dispensa de Visto de Residência",
+      "notes": "IMPORTANTE: O artigo 88.º, n.º 2 do REPSAE foi REVOGADO a partir de 4 de junho de 2024 pelo Decreto-Lei n.º 37-A/2024. Presume-se entrada legal sempre que o requerente trabalhe em território nacional e tenha situação regularizada perante a segurança social há pelo menos 12 meses. O titular pode alterar para atividade profissional independente mediante substituição do título. Aplicam-se contraordenações por permanência ilegal, falta de declaração de entrada, exercício não autorizado e falta de apresentação de documento de viagem.",
+      "process": {
+        "applicationLocation": "destino",
+        "estimatedDuration": "Variável conforme disponibilidade de agendamento e processamento pela AIMA. O prazo não está especificado na legislação.",
+        "fees": [],
+        "steps": [
+          {
+            "description": "Efetuar e confirmar registro como utilizador no novo Sistema Automático de Pré-Agendamento (SAPA) da AIMA",
+            "estimatedDays": 1,
+            "name": "Registro no Portal SAPA",
+            "order": 1
+          },
+          {
+            "description": "Apresentar manifestação de interesse através do Portal SAPA, preenchendo formulário e carregando documentos necessários. O sistema permite consultar o estado da manifestação e receber notificações da AIMA",
+            "estimatedDays": 1,
+            "name": "Manifestação de Interesse Online",
+            "order": 2
+          },
+          {
+            "description": "A AIMA analisa a manifestação de interesse e os documentos submetidos. Pedidos incompletos suspendem os prazos para decisão",
+            "estimatedDays": null,
+            "name": "Análise pela AIMA",
+            "order": 3
+          },
+          {
+            "description": "Após análise favorável, a AIMA disponibiliza possibilidade de agendamento através do Portal SAPA. O utilizador seleciona local, data e hora de acordo com disponibilidade",
+            "estimatedDays": null,
+            "name": "Agendamento para presença",
+            "order": 4
+          },
+          {
+            "description": "Comparecer pessoalmente nas Lojas AIMA na data agendada com documentos originais para formalização e decisão do pedido",
+            "estimatedDays": 1,
+            "name": "Comparecimento nas Lojas AIMA",
+            "order": 5
+          },
+          {
+            "description": "Após instrução e decisão favorável, emissão do título de residência válido por 2 anos",
+            "estimatedDays": null,
+            "name": "Emissão da Autorização de Residência",
+            "order": 6
+          }
+        ]
+      },
+      "relevanceForDelivery": "direct",
+      "requirements": {
+        "documents": [
+          {
+            "description": "Documento de viagem válido",
+            "isCritical": true,
+            "name": "Passaporte válido"
+          },
+          {
+            "description": "Visto que se encontrava válido no momento da entrada em Portugal OU 12 meses de contribuições para a segurança social",
+            "isCritical": true,
+            "name": "Comprovativo de entrada legal"
+          },
+          {
+            "description": "Cópia da promessa de contrato de trabalho ou declaração sob compromisso de honra da Entidade Patronal atestando o vínculo laboral",
+            "isCritical": true,
+            "name": "Contrato de trabalho"
+          },
+          {
+            "description": "Registo criminal do país da nacionalidade ou do país onde residiu há mais de um ano antes de residir em Portugal, devidamente autenticado",
+            "isCritical": true,
+            "name": "Registo Criminal"
+          },
+          {
+            "description": "Declaração sob compromisso de honra da morada de residência, indicando em que termos reside (proprietário, arrendatário, subarrendatário, usufrutuário, comodatário, etc.)",
+            "isCritical": true,
+            "name": "Declaração de morada"
+          },
+          {
+            "description": "Se proprietário/usufrutuário: certidão de registo predial ou código de acesso. Se arrendatário: declaração do senhorio com menção da situação jurídica",
+            "isCritical": true,
+            "name": "Comprovativo de habitação"
+          },
+          {
+            "description": "Número de Identificação Fiscal (NIF) português",
+            "isCritical": true,
+            "name": "Comprovativo de inscrição na administração fiscal"
+          },
+          {
+            "description": "Número de Identificação da Segurança Social (NISS)",
+            "isCritical": true,
+            "name": "Comprovativo de inscrição na segurança social"
+          },
+          {
+            "description": "Duas fotografias iguais, tipo passe, a cores e fundo liso, atualizadas (caso o agendamento seja nas Lojas AIMA em Odivelas ou Aveiro)",
+            "isCritical": false,
+            "name": "Fotografias"
+          }
+        ],
+        "incomeRequirement": null,
+        "languageRequired": null,
+        "qualificationsRequired": []
+      },
+      "rights": {
+        "canBringFamily": false,
+        "canChangeEmployer": true,
+        "canWork": true,
+        "pathToCitizenship": null,
+        "pathToResidency": {
+          "conditions": [
+            "A autorização inicial é válida por 2 anos",
+            "Renovável por períodos sucessivos de 3 anos",
+            "Manutenção dos requisitos que deram origem à autorização"
+          ],
+          "yearsRequired": 2
+        }
+      }
+    },
+    {
+      "description": "Autorizacao de residencia para exercicio de atividade altamente qualificada, subordinada ou autonoma, em Portugal. Equivalente ao EU Blue Card, mas com regime proprio portugues (Artigo 90.º do REPSAE).",
+      "eligibility": [
+        "Exercer atividade altamente qualificada subordinada ou autonoma",
+        "Possuir certificado de habilitacoes ou documento que comprove especializacao",
+        "Cumprir requisitos salariais minimos conforme tipo de profissao",
+        "Nao ter condenacao por crime punivel com pena superior a 1 ano em Portugal",
+        "Nao estar em periodo de interdicao de entrada em territorio nacional"
+      ],
+      "id": "altamente-qualificada",
+      "name": "Autorizacao de Residencia para Atividade Altamente Qualificada",
+      "nameOriginal": "Autorização de Residência para Atividade Altamente Qualificada",
+      "notes": "Esta autorizacao e o regime portugues proprio para atividade altamente qualificada (Art. 90.º REPSAE), distinto do cartao azul UE (Art. 121.º-A REPSAE) e do Tech Visa (regime especial para empresas certificadas). Requisitos salariais minimos: salario bruto anual de 1,5x o salario medio nacional (25.884 EUR/ano ou 2.157 EUR/mes em valores 2023) para trabalho subordinado em geral, ou 1,2x (20.707 EUR/ano ou 1.725,60 EUR/mes) para profissoes dos grupos 1 e 2 da CITP em setores carentes. Contraordenacoes aplicaveis por permanencia ilegal, falta de declaracao de entrada ou falta de apresentacao de documento de viagem.",
+      "process": {
+        "applicationLocation": "ambos",
+        "estimatedDuration": "Nao especificado. O prazo varia conforme a carga de trabalho da AIMA",
+        "fees": [],
+        "steps": [
+          {
+            "description": "Obter visto de residencia para atividade altamente qualificada no pais de origem, junto do consulado portugues",
+            "estimatedDays": null,
+            "name": "Obtencao de visto de residencia",
+            "order": 1
+          },
+          {
+            "description": "Entrar em Portugal com o visto de residencia valido",
+            "estimatedDays": null,
+            "name": "Entrada em Portugal",
+            "order": 2
+          },
+          {
+            "description": "Realizar inscricao na Administracao Fiscal e na Seguranca Social",
+            "estimatedDays": null,
+            "name": "Inscricao na AT e Seguranca Social",
+            "order": 3
+          },
+          {
+            "description": "Agendar atendimento presencial na Loja AIMA (ou submeter via plataforma eletronica quando disponivel). O pedido pode ser feito pelo interessado ou pela entidade/empresa que o acolhe",
+            "estimatedDays": null,
+            "name": "Agendamento na AIMA",
+            "order": 4
+          },
+          {
+            "description": "Reunir todos os documentos necessarios: passaporte, visto, registo criminal autenticado, comprovativos de morada, inscricoes AT/SS, certificado de habilitacoes, comprovativo de atividade altamente qualificada, formularios preenchidos",
+            "estimatedDays": null,
+            "name": "Preparacao da documentacao",
+            "order": 5
+          },
+          {
+            "description": "Comparecer presencialmente em qualquer Loja AIMA com impresso proprio (Modelo 1) assinado e toda documentacao. A loja pode remeter o processo para os servicos da area de residencia do requerente",
+            "estimatedDays": null,
+            "name": "Entrega presencial do pedido",
+            "order": 6
+          },
+          {
+            "description": "Aguardar instrucao e decisao do pedido pela AIMA",
+            "estimatedDays": null,
+            "name": "Analise e decisao",
+            "order": 7
+          },
+          {
+            "description": "Recebimento do titulo de autorizacao de residencia temporaria, valido por 2 anos",
+            "estimatedDays": null,
+            "name": "Emissao da autorizacao de residencia",
+            "order": 8
+          }
+        ]
+      },
+      "relevanceForDelivery": "direct",
+      "requirements": {
+        "documents": [
+          {
+            "description": "Fotografias iguais, a cores, fundo liso, atualizadas e com boas condicoes de identificacao (caso agendamento se realize nas Lojas AIMA em Odivelas ou Aveiro)",
+            "isCritical": false,
+            "name": "Duas fotografias tipo passe"
+          },
+          {
+            "description": "Passaporte em validade",
+            "isCritical": true,
+            "name": "Passaporte valido"
+          },
+          {
+            "description": "Visto de residencia valido para atividade altamente qualificada",
+            "isCritical": true,
+            "name": "Visto de residencia para atividade altamente qualificada"
+          },
+          {
+            "description": "Registo criminal do pais da nacionalidade ou do pais onde residiu ha mais de um ano antes de residir em Portugal, devidamente autenticado",
+            "isCritical": true,
+            "name": "Registo Criminal"
+          },
+          {
+            "description": "Declaracao sob compromisso de honra da morada de residencia, referindo em que termos se encontra a residir (proprietario, arrendatario, subarrendatario, usufrutuario, comodatario, etc.)",
+            "isCritical": true,
+            "name": "Declaracao de morada de residencia"
+          },
+          {
+            "description": "Se proprietario/usufrutuario: certidao de registo predial ou codigo de acesso. Se arrendatario/locatario: declaracao do senhorio com mencao da situacao juridica",
+            "isCritical": true,
+            "name": "Comprovativo de propriedade ou uso do imovel"
+          },
+          {
+            "description": "Comprovativo de inscricao junto da Administracao Fiscal (AT)",
+            "isCritical": true,
+            "name": "Comprovativo de inscricao na administracao fiscal"
+          },
+          {
+            "description": "Comprovativo de inscricao na Seguranca Social",
+            "isCritical": true,
+            "name": "Comprovativo de inscricao na seguranca social"
+          },
+          {
+            "description": "Copia autenticada do certificado de habilitacoes ou de documento que comprove a especializacao",
+            "isCritical": true,
+            "name": "Certificado de habilitacoes ou documento de especializacao"
+          },
+          {
+            "description": "Declaracao da entidade patronal atestando existencia de contrato de trabalho com vencimento minimo de 1,5x salario medio nacional (2.157 EUR/mes) ou 3x IAS. Para profissoes CITP grupos 1 e 2 em setores carentes: 1,2x salario medio (1.725,60 EUR/mes) ou 2x IAS (1.018,52 EUR/mes). Valores de 2023-2024.",
+            "isCritical": true,
+            "name": "Comprovativo de exercicio de atividade altamente qualificada - Trabalho Subordinado"
+          },
+          {
+            "description": "Comprovativo de inicio de atividade junto da AT e Seguranca Social, contrato de prestacao de servicos, comprovativo de constituicao de sociedade (certidao permanente) ou ultimos recibos emitidos",
+            "isCritical": true,
+            "name": "Comprovativo de exercicio de atividade altamente qualificada - Trabalho Autonomo"
+          },
+          {
+            "description": "Formulario oficial (Modelo 1) assinado pelo requerente ou representante legal",
+            "isCritical": true,
+            "name": "Modelo 1 - Impresso proprio"
+          },
+          {
+            "description": "Termo de Responsabilidade (preenchimento se aplicavel)",
+            "isCritical": false,
+            "name": "Modelo 4 - Termo de Responsabilidade"
+          }
+        ],
+        "incomeRequirement": {
+          "amount": 25884,
+          "currency": "EUR",
+          "notes": "Salario bruto minimo anual de 1,5x o salario medio nacional (2.157 EUR/mes x 12 = 25.884 EUR/ano) para trabalho subordinado em geral. Para profissoes dos grupos 1 e 2 da CITP em setores com necessidade de trabalhadores: 1,2x salario medio nacional (1.725,60 EUR/mes x 12 = 20.707,20 EUR/ano) ou 2x IAS (1.018,52 EUR/mes x 12 = 12.222,24 EUR/ano). Valores de referencia 2023-2024.",
+          "period": "yearly"
+        },
+        "languageRequired": null,
+        "qualificationsRequired": [
+          "Certificado de habilitacoes de nivel superior ou documento que comprove especializacao profissional",
+          "Qualificacao adequada para exercicio de atividade altamente qualificada"
+        ]
+      },
+      "rights": {
+        "canBringFamily": false,
+        "canChangeEmployer": false,
+        "canWork": true,
+        "pathToCitizenship": null,
+        "pathToResidency": {
+          "conditions": [
+            "A autorizacao de residencia temporaria e valida inicialmente por 2 anos",
+            "Renovavel por periodos sucessivos de 3 anos",
+            "Manter requisitos de atividade altamente qualificada e requisitos salariais"
+          ],
+          "yearsRequired": 2
+        }
+      }
+    },
+    {
+      "description": "Autorização de residência temporária destinada a profissionais que exercem atividade profissional de forma remota para empresas ou clientes localizados fora de Portugal. Também conhecida como visto de nômade digital.",
+      "eligibility": [
+        "Profissionais que exercem atividade profissional de forma remota",
+        "Trabalho prestado para entidades com domicílio ou sede fora do território nacional",
+        "Vínculo laboral ou prestação de serviços comprovado",
+        "Ausência de condenação por crime punível com pena superior a 1 ano em Portugal",
+        "Não estar em período de interdição de entrada em território nacional"
+      ],
+      "id": "autorizacao-residencia-trabalho-remoto",
+      "name": "Autorização de Residência para Trabalho Remoto (Nômade Digital)",
+      "nameOriginal": "Autorização de Residência para o Exercício de Atividade Profissional Prestada de Forma Remota para Fora do Território Nacional",
+      "notes": "A autorização de residência é válida por 2 anos a partir da emissão e renovável por períodos sucessivos de 3 anos. O trabalho deve ser prestado para entidades fora de Portugal. Contraordenações aplicáveis: permanência ilegal, falta de declaração de entrada, exercício de atividade não autorizado, falta de apresentação de documento de viagem.",
+      "process": {
+        "applicationLocation": "ambos",
+        "estimatedDuration": "Não especificado",
+        "fees": [],
+        "steps": [
+          {
+            "description": "Obter visto de residência para trabalho remoto no consulado português no país de origem",
+            "estimatedDays": null,
+            "name": "Obtenção do visto de residência",
+            "order": 1
+          },
+          {
+            "description": "Agendar atendimento em uma Loja AIMA (ou através de plataforma eletrônica, quando implementada para titulares de visto de residência)",
+            "estimatedDays": null,
+            "name": "Agendamento",
+            "order": 2
+          },
+          {
+            "description": "Apresentar pedido presencialmente em qualquer Loja AIMA com todos os documentos necessários",
+            "estimatedDays": null,
+            "name": "Apresentação do pedido",
+            "order": 3
+          },
+          {
+            "description": "Aguardar instrução e decisão do pedido pela AIMA, que pode remeter para os serviços da área de residência do requerente",
+            "estimatedDays": null,
+            "name": "Instrução e decisão",
+            "order": 4
+          },
+          {
+            "description": "Emissão do título de residência após aprovação",
+            "estimatedDays": null,
+            "name": "Emissão da autorização",
+            "order": 5
+          }
+        ]
+      },
+      "relevanceForDelivery": "direct",
+      "requirements": {
+        "documents": [
+          {
+            "description": "Fotografias iguais, a cores e fundo liso, atualizadas e com boas condições de identificação (aplicável para agendamentos em Odivelas ou Aveiro)",
+            "isCritical": false,
+            "name": "Duas fotografias tipo passe"
+          },
+          {
+            "description": "Passaporte com validade",
+            "isCritical": true,
+            "name": "Passaporte válido"
+          },
+          {
+            "description": "Visto de residência para o exercício de atividade profissional prestada de forma remota para fora do território nacional válido",
+            "isCritical": true,
+            "name": "Visto de residência para trabalho remoto"
+          },
+          {
+            "description": "Declaração sob compromisso de honra da pessoa singular ou coletiva com domicílio ou sede fora do território nacional atestando o vínculo laboral ou a prestação de serviços",
+            "isCritical": true,
+            "name": "Declaração de vínculo laboral ou prestação de serviços"
+          },
+          {
+            "description": "Declaração sob compromisso de honra da morada de residência, referindo em que termos se encontra a residir na habitação (proprietário, arrendatário, subarrendatário, usufrutuário, comodatário, etc.)",
+            "isCritical": true,
+            "name": "Declaração de morada de residência"
+          },
+          {
+            "description": "Se proprietário/usufrutuário: certidão de registo predial ou código de acesso. Se arrendatário/locatário: declaração do senhorio com menção da situação jurídica do direito de uso do imóvel",
+            "isCritical": true,
+            "name": "Comprovativo de habitação"
+          },
+          {
+            "description": "Impresso próprio assinado pelo requerente ou representante legal (preenchimento obrigatório)",
+            "isCritical": true,
+            "name": "Modelo 1"
+          },
+          {
+            "description": "Termo de Responsabilidade (preenchimento se aplicável)",
+            "isCritical": false,
+            "name": "Modelo 4"
+          }
+        ],
+        "incomeRequirement": null,
+        "languageRequired": null,
+        "qualificationsRequired": []
+      },
+      "rights": {
+        "canBringFamily": false,
+        "canChangeEmployer": false,
+        "canWork": true,
+        "pathToCitizenship": null,
+        "pathToResidency": {
+          "conditions": [
+            "Renovável por períodos sucessivos de três anos após o período inicial de dois anos"
+          ],
+          "yearsRequired": 2
+        }
+      }
+    }
+  ]
+}
