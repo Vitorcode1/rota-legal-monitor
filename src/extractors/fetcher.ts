@@ -41,7 +41,10 @@ export interface FetchResult {
   usedPlaywright: boolean
 }
 
-async function fetchNative(url: string): Promise<{ html: string; lang: string } | null> {
+async function fetchNative(
+  url: string,
+  ignoreSSL = false,
+): Promise<{ html: string; lang: string } | null> {
   const controller = new AbortController()
   const timer = setTimeout(() => controller.abort(), FETCH_TIMEOUT_MS)
   try {
@@ -52,6 +55,8 @@ async function fetchNative(url: string): Promise<{ html: string; lang: string } 
         Accept: 'text/html,application/xhtml+xml,application/xml;q=0.9',
         'Accept-Language': 'en-US,en;q=0.9,nl;q=0.8',
       },
+      // @ts-ignore — extensao do Bun: ignora CA propria de dominios governamentais
+      ...(ignoreSSL ? { tls: { rejectUnauthorized: false } } : {}),
     })
     if (!res.ok) {
       log.warn('fetch retornou status nao-ok', { url, status: res.status })
@@ -82,7 +87,11 @@ async function fetchPlaywright(url: string): Promise<string | null> {
   log.info('usando Playwright como fallback', { url })
   try {
     const { chromium } = await import('playwright')
-    const browser = await chromium.launch({ headless: true })
+    const browser = await chromium.launch({
+      headless: true,
+      timeout: FETCH_TIMEOUT_MS,
+      args: ['--disable-gpu', '--no-sandbox', '--disable-dev-shm-usage'],
+    })
     try {
       const page = await browser.newPage()
       await page.setExtraHTTPHeaders({ 'User-Agent': UA })
@@ -97,12 +106,12 @@ async function fetchPlaywright(url: string): Promise<string | null> {
   }
 }
 
-export async function fetchPage(url: string): Promise<FetchResult> {
+export async function fetchPage(url: string, ignoreSSL = false): Promise<FetchResult> {
   await enforceRateLimit(url)
 
   const fetchedAt = new Date().toISOString()
 
-  const native = await fetchNative(url)
+  const native = await fetchNative(url, ignoreSSL)
 
   if (native !== null && !looksEmpty(native.html)) {
     return { html: native.html, fetchedAt, contentLanguage: native.lang, usedPlaywright: false }

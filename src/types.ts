@@ -10,6 +10,9 @@ export interface UrlConfig {
   contentType: ContentType
   promptHint: string
   fetchFrequency: 'biweekly' | 'monthly'
+  // Desativa verificacao de SSL para dominios de governo que usam CA propria
+  // nao incluida no bundle do Bun/Node. Necessario para sites .gov.es, .gov.pt, etc.
+  ignoreSSL?: boolean
 }
 
 export interface SourceConfig {

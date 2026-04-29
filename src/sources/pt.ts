@@ -1,63 +1,65 @@
 import type { SourceConfig } from '@/types'
 
+// Fonte: vistos.mne.gov.pt (Ministerio dos Negocios Estrangeiros) - sem problemas de SSL.
+// O portal aima.gov.pt usa CA do governo portugues nao confiada pelo Bun/Node por padrao.
 export const ptSource: SourceConfig = {
   countryCode: 'pt',
   countryName: 'Portugal',
-  primaryLanguage: 'pt',
-  acceptableLanguages: ['pt', 'en'],
+  primaryLanguage: 'en',
+  acceptableLanguages: ['en', 'pt'],
 
   urls: [
     {
-      url: 'https://imigrantes.pt/en/residence-visas/',
+      url: 'https://vistos.mne.gov.pt/en/national-visas/general-information/type-of-visa',
       contentType: 'visa-overview',
       promptHint:
-        'Pagina hub com todos os tipos de visto de residencia em Portugal. Liste cada categoria e avalie relevancia para trabalhadores brasileiros. Destaque especialmente vistos D1 (empregado), D2 (empreendedor), D3 (altamente qualificado), D8 (nomade digital) e CPLP.',
+        'Pagina oficial do MNE portugues listando todos os tipos de visto nacional (D). Liste cada tipo: D1 (subordinado), D2 (independente), D3 (altamente qualificado), D7 (rendimentos proprios), D8 (nomade digital), CPLP. Para cada um indique o objetivo e se permite trabalhar.',
       fetchFrequency: 'biweekly',
     },
     {
-      url: 'https://imigrantes.pt/en/residence-visas/working/',
+      url: 'https://vistos.mne.gov.pt/en/national-visas/necessary-documentation/residency',
       contentType: 'visa-requirements',
       promptHint:
-        'Vistos de trabalho em Portugal para cidadaos de fora da UE. Extraia requisitos de cada modalidade, documentos necessarios e valores de salario minimo exigidos. Para brasileiros, verifique se o Tratado de Amizade Luso-Brasileiro (1953) confere privilegios especiais e quais sao.',
+        'Documentos necessarios para visto de residencia para trabalho em Portugal (D1 e equivalentes). Extraia a lista completa de documentos exigidos, traducoes necessarias, apostilamentos e qualquer exigencia especifica para brasileiros (Tratado de Amizade Luso-Brasileiro e Estatuto de Igualdade).',
       fetchFrequency: 'biweekly',
     },
     {
-      url: 'https://imigrantes.pt/en/cplp-mobility/',
+      url: 'https://vistos.mne.gov.pt/en/national-visas/necessary-documentation/cplp-en',
       contentType: 'visa-requirements',
       promptHint:
-        'Visto de mobilidade CPLP para cidadaos de paises de lingua portuguesa, incluindo o Brasil. Extraia: elegibilidade especifica para brasileiros, documentos necessarios, duracao, se permite trabalhar, e como se diferencia do visto de trabalho padrao.',
+        'Documentos para o visto de mobilidade CPLP para cidadaos de paises de lingua portuguesa, incluindo brasileiros. Extraia: lista de documentos, elegibilidade especifica para brasileiros, como difere do visto D padrao, duracao e se permite trabalhar em Portugal durante o periodo de validade.',
       fetchFrequency: 'biweekly',
     },
     {
-      url: 'https://aima.gov.pt/pt/servicos/taxas',
-      contentType: 'fees',
+      url: 'https://vistos.mne.gov.pt/en/national-visas/necessary-documentation/job-seeker-visa',
+      contentType: 'visa-requirements',
       promptHint:
-        'Tabela de taxas da AIMA (Agencia para a Integracao, Migracoes e Asilo) para vistos e autorizacoes de residencia. Registre cada valor exato em EUR por tipo de autorizacao. Nao estime.',
-      fetchFrequency: 'biweekly',
+        'Visto de busca de emprego em Portugal (job seeker visa). Extraia: documentos necessarios, duracao maxima, atividades permitidas durante a busca, e como converter para visto de trabalho apos conseguir emprego.',
+      fetchFrequency: 'monthly',
     },
     {
-      url: 'https://imigrantes.pt/en/useful-information/fees/',
+      url: 'https://vistos.mne.gov.pt/en/national-visas/general-information/fees',
       contentType: 'fees',
       promptHint:
-        'Taxas e custos de processos de imigracao em Portugal. Extraia valores em EUR para pedidos de visto, autorizacao de residencia e renovacao.',
+        'Tabela oficial de taxas consulares para vistos nacionais portugueses. Extraia cada valor em EUR por tipo de visto. Registre se ha isencoes ou reducoes para brasileiros ou cidadaos CPLP. Nao estime: use apenas valores explicitamente listados.',
       fetchFrequency: 'biweekly',
     },
   ],
 
   glossary: {
     'Autorização de Residência': 'Autorizacao de Residencia (AR)',
-    'SEF': 'Servico de Estrangeiros e Fronteiras (extinto, substituido pela AIMA)',
-    'AIMA': 'Agencia para a Integracao, Migracoes e Asilo',
+    'AIMA': 'Agencia para a Integracao, Migracoes e Asilo (substitui o SEF desde 2023)',
+    'MNE': 'Ministerio dos Negocios Estrangeiros',
     'NIF': 'Numero de Identificacao Fiscal',
-    'NHR': 'Regime Fiscal do Residente Nao Habitual',
     'CPLP': 'Comunidade dos Paises de Lingua Portuguesa',
-    'Visto D1': 'Visto de residencia para atividade profissional subordinada',
-    'Visto D2': 'Visto de residencia para atividade profissional independente',
-    'Visto D3': 'Visto de residencia para profissional altamente qualificado',
-    'Visto D7': 'Visto de residencia para pessoas com rendimentos proprios',
-    'Visto D8': 'Visto de residencia para nomades digitais',
-    'Visto CPLP': 'Visto de mobilidade para cidadaos da CPLP',
+    'Estatuto de Igualdade': 'Status especial para brasileiros com direitos equivalentes a cidadaos portugueses',
     'Tratado de Amizade': 'Tratado de Amizade, Cooperacao e Consulta Brasil-Portugal (2000)',
+    'Cartao Azul UE': 'EU Blue Card para profissionais altamente qualificados',
+    'D1': 'Visto de residencia para atividade profissional subordinada (empregado)',
+    'D2': 'Visto de residencia para atividade profissional independente (autonomo)',
+    'D3': 'Visto de residencia para profissional altamente qualificado',
+    'D7': 'Visto de residencia para pessoas com rendimentos proprios',
+    'D8': 'Visto de residencia para nomades digitais / trabalho remoto',
     'SNS': 'Servico Nacional de Saude portugues',
     'IEFP': 'Instituto do Emprego e Formacao Profissional',
   },

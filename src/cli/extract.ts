@@ -153,7 +153,7 @@ async function extractCountry(countryCode: string): Promise<void> {
 
     let html: string
     try {
-      const result = await fetchPage(urlConfig.url)
+      const result = await fetchPage(urlConfig.url, urlConfig.ignoreSSL)
       html = result.html
       fetchedAt = result.fetchedAt
       contentLanguage = result.contentLanguage

@@ -22,7 +22,7 @@ export const deSource: SourceConfig = {
       fetchFrequency: 'biweekly',
     },
     {
-      url: 'https://www.make-it-in-germany.com/en/visa-residence/types/opportunity-card',
+      url: 'https://www.make-it-in-germany.com/en/visa-residence/opportunity-card',
       contentType: 'visa-requirements',
       promptHint:
         'Opportunity Card (Chancenkarte) da Alemanha para busca de emprego. Extraia: sistema de pontos necessarios, criterios de elegibilidade (diploma, experiencia, idioma, idade), duracao do visto, restricoes de trabalho durante a busca e como converter para visto de trabalho.',
@@ -36,10 +36,10 @@ export const deSource: SourceConfig = {
       fetchFrequency: 'biweekly',
     },
     {
-      url: 'https://www.bamf.de/EN/Themen/MigrationAufenthalt/ZuwandererDrittstaaten/Fachkraeftezuwanderung/fachkraeftezuwanderung-node.html',
+      url: 'https://www.make-it-in-germany.com/en/visa-residence/living-permanently/settlement-permit',
       contentType: 'visa-overview',
       promptHint:
-        'Pagina do BAMF sobre imigração de trabalhadores qualificados de paises fora da UE. Extraia atualizacoes recentes de politica, requisitos de reconhecimento de qualificacoes e links para procedimentos de reconhecimento de diploma estrangeiro.',
+        'Visao geral dos tipos de autorizacao de residencia e permanencia na Alemanha para trabalhadores de paises fora da UE. Extraia: diferenca entre permissao temporaria e permanente (Niederlassungserlaubnis), tempo minimo para residencia permanente e condicoes gerais de manutencao do visto de trabalho.',
       fetchFrequency: 'monthly',
     },
   ],

@@ -1,5 +1,8 @@
 import type { SourceConfig } from '@/types'
 
+// Todos os dominios .gob.es usam CA propria do governo espanhol nao incluida
+// no bundle do Bun/Node. ignoreSSL: true ativa tls.rejectUnauthorized=false
+// apenas para essas requests. No CI (Ubuntu) o sistema ja confia nessas CAs.
 export const esSource: SourceConfig = {
   countryCode: 'es',
   countryName: 'Espanha',
@@ -13,6 +16,7 @@ export const esSource: SourceConfig = {
       promptHint:
         'Portal oficial espanhol sobre autorizacoes de residencia para cidadaos de fora da UE (regime geral). Liste todos os tipos de autorizacao relevantes para brasileiros que querem trabalhar na Espanha: autorizacao inicial de trabalho, trabalho por conta propria, profissionais altamente qualificados, nomade digital.',
       fetchFrequency: 'biweekly',
+      ignoreSSL: true,
     },
     {
       url: 'https://extranjeros.inclusion.gob.es/en/regimenes_extranjeria/regimen_general/residencia/trabajadores/index.html',
@@ -20,6 +24,7 @@ export const esSource: SourceConfig = {
       promptHint:
         'Autorizacao de residencia e trabalho por conta alheia na Espanha. Extraia: requisitos do empregador, oferta de emprego necessaria, salario minimo, documentos exigidos e tempo de processamento. Verifique se ha tratamento diferenciado para cidadaos ibero-americanos (incluindo brasileiros).',
       fetchFrequency: 'biweekly',
+      ignoreSSL: true,
     },
     {
       url: 'https://www.inclusion.gob.es/web/migraciones/en/trabajadores-extranjeros/altamente-cualificados',
@@ -27,6 +32,7 @@ export const esSource: SourceConfig = {
       promptHint:
         'Autorizacao espanhola para profissionais altamente qualificados e EU Blue Card na Espanha. Extraia: salario bruto anual minimo em EUR, qualificacao academica exigida, setores prioritarios e como difere da autorizacao de trabalho padrao.',
       fetchFrequency: 'biweekly',
+      ignoreSSL: true,
     },
     {
       url: 'https://extranjeros.inclusion.gob.es/en/regimenes_extranjeria/regimen_general/residencia/nomada_digital/index.html',
@@ -34,6 +40,7 @@ export const esSource: SourceConfig = {
       promptHint:
         'Visto de nomade digital espanhol (Lei de Startups 28/2022). Extraia: requisitos de renda minima em EUR, tipo de trabalho aceito (remoto para empresa fora da Espanha), documentacao necessaria, beneficios fiscais (regime BECKHAM) e como solicitar.',
       fetchFrequency: 'biweekly',
+      ignoreSSL: true,
     },
     {
       url: 'https://extranjeros.inclusion.gob.es/en/InformacionInteres/tasa.html',
@@ -41,6 +48,7 @@ export const esSource: SourceConfig = {
       promptHint:
         'Tabela de taxas (modelo 790) para autorizacoes de residencia e trabalho na Espanha. Extraia cada valor em EUR por tipo de autorizacao. Nao estime: use apenas valores explicitamente listados.',
       fetchFrequency: 'biweekly',
+      ignoreSSL: true,
     },
   ],
 
