@@ -14,6 +14,8 @@ on:
 permissions:
   contents: write
   issues: write
+  pages: write
+  id-token: write
 
 jobs:
   update:
@@ -53,6 +55,9 @@ jobs:
             bun run extract
           fi
 
+      - name: Generate index.json
+        run: bun run index
+
       - name: Detect changes
         id: diff
         run: bun run diff > diff-output.md
@@ -81,6 +86,15 @@ jobs:
             git commit -m "chore(data): biweekly snapshot $(date +%Y-%m-%d)"
             git push origin master
           fi
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./data/current
+          publish_branch: gh-pages
+          exclude_assets: 'example.json'
+          commit_message: 'chore(pages): deploy data snapshot ${{ github.run_id }}'
 
       - name: Cleanup temp files
         if: always()

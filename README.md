@@ -116,17 +116,42 @@ rota-legal-monitor/
         └── biweekly-update.yml  cron quinzenal
 ```
 
+## Consumindo os dados
+
+Os snapshots JSON ficam disponíveis publicamente via GitHub Pages, sem autenticação e com CORS habilitado:
+
+```
+https://SEU_USER.github.io/rota-legal-monitor/{cc}.json
+https://SEU_USER.github.io/rota-legal-monitor/index.json
+```
+
+Exemplos:
+
+```
+https://SEU_USER.github.io/rota-legal-monitor/nl.json   # Holanda
+https://SEU_USER.github.io/rota-legal-monitor/pt.json   # Portugal
+https://SEU_USER.github.io/rota-legal-monitor/de.json   # Alemanha
+https://SEU_USER.github.io/rota-legal-monitor/es.json   # Espanha
+https://SEU_USER.github.io/rota-legal-monitor/ie.json   # Irlanda
+```
+
+O `index.json` lista todos os países disponíveis com metadados (última atualização, número de tipos de visto, nível de confiança). Use-o para descobrir quais países têm dados antes de buscar o JSON completo.
+
+Substitua `SEU_USER` pelo seu nome de usuário do GitHub. Configure o GitHub Pages apontando para o branch `gh-pages` nas configurações do repositório.
+
 ## Status dos países
 
 | País | Código | Prioridade | Status |
 |------|--------|------------|--------|
-| Holanda | `nl` | P0 | em desenvolvimento |
-| Portugal | `pt` | P1 | planejado (CPLP relevante) |
-| Alemanha | `de` | P2 | planejado |
-| Espanha | `es` | P3 | planejado |
-| Irlanda | `ie` | P4 | planejado |
+| Holanda | `nl` | P0 | ativo |
+| Portugal | `pt` | P1 | ativo |
+| Alemanha | `de` | P2 | ativo |
+| Espanha | `es` | P3 | ativo (CI) |
+| Irlanda | `ie` | P4 | ativo |
 
 Cada país é uma config isolada em `src/sources/{cc}.ts`. Adicionar país novo é seguir [`docs/adding-countries.md`](docs/adding-countries.md).
+
+> Espanha: o snapshot é gerado no CI (Ubuntu). Localmente no Windows o Playwright não consegue iniciar o chromium headless, mas todas as URLs espanholas respondem corretamente no Linux.
 
 ## Como começar a desenvolver
 

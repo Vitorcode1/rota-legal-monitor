@@ -14,6 +14,7 @@
     "diff": "bun run src/cli/diff.ts",
     "validate": "bun run src/cli/validate.ts",
     "typecheck": "tsc --noEmit",
+    "index": "bun run src/cli/index-gen.ts",
     "test": "bun test"
   },
   "dependencies": {
