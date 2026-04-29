@@ -79,7 +79,7 @@ jobs:
             echo "Nenhuma mudanca para comitar"
           else
             git commit -m "chore(data): biweekly snapshot $(date +%Y-%m-%d)"
-            git push origin main
+            git push origin master
           fi
 
       - name: Cleanup temp files
